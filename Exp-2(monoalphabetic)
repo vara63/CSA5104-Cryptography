@@ -1,0 +1,14 @@
+plain = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+cipher = "QWERTYUIOPASDFGHJKLZXCVBNM"
+text = input("Enter the message: ")
+encrypted = ""
+for ch in text:
+    if ch.isupper():
+        pos = plain.index(ch)
+        encrypted += cipher[pos]
+    elif ch.islower():
+        pos = plain.index(ch.upper())
+        encrypted += cipher[pos].lower()
+    else:
+        encrypted += ch
+print("Encrypted message:", encrypted)
